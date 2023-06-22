@@ -1,0 +1,124 @@
+body{
+    background: #212121;
+    margin: 0 auto;
+    padding: 0;
+    font-family: "-apple-system","PingFang TC","Microsoft JhengHei","Source Sans Pro", Helvetica, sans-serif;
+    font-size: 16px;
+
+}
+.container{
+    max-width: 550px;
+    text-align: center;
+    margin: 20px auto 0;
+    padding: 20px;
+}
+.logo{
+    padding: 15px;
+}
+.logo img{
+    width: 85px;
+    height: 85px;
+}
+.app_name{
+    font-weight: bold;
+    font-size: 26px;
+    color: rgba(255, 254, 254, 0.9);
+}
+.subtitle{
+    margin-top: 10px;
+    color: rgba(255, 254, 254, 0.8);
+}
+
+.subtitle2{
+    margin-top: 5px;
+    color: rgba(255, 254, 254, 0.8);
+}
+
+.subtitle3{
+    margin-top: 10px;
+    text-align: left;
+    color: rgba(255, 254, 254, 0.8);
+}
+
+.content{
+    margin-top: 30px;
+}
+
+.button.rounded {
+    border-radius: 9999px;
+}
+
+.download_container .button {
+    height: 50px;
+    display: block;
+    border: 1px solid;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    max-width: 500px;
+    margin: 0 auto 20px;
+    line-height: 50px;
+    font-weight: bold;
+}
+.download_container{
+    margin-top: 40px;
+}
+a {
+    text-decoration: none;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+    outline:none;
+    background: none;
+    text-decoration: none;
+}
+
+a:hover,a:active,a:visited,a:link,a:focus{
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+    outline:none;
+    background: none;
+    text-decoration: none;
+}
+
+a:hover{
+
+}
+
+.button img{
+    width: 20px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    vertical-align:middle;
+}
+
+.problems{
+    max-width: 500px;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: left;
+    margin: 40px auto 0;
+}
+.problems_title{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.9);
+
+}
+.problems_subtitle{
+    margin-top: 20px;
+    font-weight: bold;
+}
+li{
+    line-height: 25px;
+    margin-bottom: 5px;
+}
+.ios_password{
+    font-weight: bold;
+    font-size: 24px;
+    color: #FF862C;
+}
+.footer{
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 25px;
+    font-size: 14px;
+}
