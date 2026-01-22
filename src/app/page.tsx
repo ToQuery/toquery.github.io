@@ -1,10 +1,9 @@
-import styles from "./page.module.css";
+import ProjectCard from "../components/ProjectCard";
+import { showcaseProjects } from "../data/showcase";
 
 // Skill data type
 type Skill = {
   name: string;
-  icon?: string; // We can add emoji or path to svg later
-  color?: string; // Optional hover color
 };
 
 const skills: Skill[] = [
@@ -18,72 +17,56 @@ const skills: Skill[] = [
   { name: "Vue.js" },
   { name: "React" },
   { name: "Next.js" },
-];
-
-type Project = {
-  name: string;
-  description: string;
-  url: string;
-};
-
-const projects: Project[] = [
-  {
-    name: "Skills.homes",
-    description: "Supercharge your AI Agents with Skills",
-    url: "https://skills.homes",
-  },
+  { name: "Spring Boot" },
+  { name: "PostgreSQL" },
 ];
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.hero}>
-        <h1 className={styles.title}>toquery</h1>
-        <p className={styles.subtitle}>
-          Full Stack Developer & Technology Enthusiast.
-          <br />
-          Explorations in code, design, and architecture.
-        </p>
-      </div>
+    <main className="min-h-screen pt-32 pb-20">
+      {/* Hero Section */}
+      <section className="container mx-auto px-6 mb-24">
+        <div className="max-w-2xl">
+          <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-6 text-foreground">
+            Hello, I&apos;m ToQuery.
+          </h1>
+          <p className="text-xl text-muted-foreground leading-relaxed">
+            Full Stack Developer & Technology Enthusiast.
+            <br />
+            Explorations in code, design, and architecture.
+          </p>
+        </div>
+      </section>
 
-      <section className={styles.projectsSection}>
-        <h2 className={styles.sectionTitle}>Projects</h2>
-        <div className={styles.grid}>
-          {projects.map((project) => (
-            <a
+      {/* Projects Section */}
+      <section className="container mx-auto px-6 mb-24">
+        <h2 className="text-2xl font-bold tracking-tight mb-8 text-foreground">
+          Featured Projects
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {showcaseProjects.map((project) => (
+            <ProjectCard
               key={project.name}
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.projectCard}
-            >
-              <h3 className={styles.projectTitle}>{project.name}</h3>
-              <p className={styles.projectDescription}>{project.description}</p>
-              <div className={styles.projectLink}>
-                Visit Project <span>→</span>
-              </div>
-            </a>
+              name={project.name}
+              description={project.description}
+              url={project.url}
+            />
           ))}
         </div>
       </section>
 
-      <section className={styles.skillsSection}>
-        <h2 className={styles.sectionTitle}>Tech Stack</h2>
-        <div className={styles.grid}>
+      {/* Skills Section */}
+      <section className="container mx-auto px-6">
+        <h2 className="text-2xl font-bold tracking-tight mb-8 text-foreground">
+          Technological Proficiency
+        </h2>
+        <div className="flex flex-wrap gap-3">
           {skills.map((skill) => (
-            <div key={skill.name} className={styles.card}>
-              <div className={styles.skillIcon}>
-                {/* 
-                  Using a simple initial letter or placeholder for now. 
-                  In a real scenario, we might import SVGs or use a library like react-icons. 
-                  For now, let's just show the name directly or a code symbol.
-                */}
-                {skill.name === "Golang" ? "Go" :
-                  skill.name === "JavaScript" ? "JS" :
-                    skill.name === "TypeScript" ? "TS" :
-                      skill.name.slice(0, 1)}
-              </div>
-              <span className={styles.skillName}>{skill.name}</span>
+            <div
+              key={skill.name}
+              className="px-4 py-2 rounded-full border border-border bg-secondary/50 text-sm font-medium text-secondary-foreground hover:bg-secondary transition-colors cursor-default"
+            >
+              {skill.name}
             </div>
           ))}
         </div>
