@@ -35,6 +35,9 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
+  other: {
+    'google-site-verification': "m8VHTSIJoNC-ljbn8FG-cUWDf7GxV0leN5iZL9JYuhk",
+  },
 };
 
 export default function RootLayout({
