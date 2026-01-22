@@ -33,76 +33,77 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
 
-  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+  --font-sans: var(--font-inter);
 }
 
 @layer base {
   :root {
-    /* Matrix Light Mode (High Contrast Terminal) */
-    --background: 240 255 240;
-    --foreground: 0 50 0;
+    --background: 255 255 255;
+    --foreground: 9 9 11;
+    /* Zinc 950 */
 
     --card: 255 255 255;
-    --card-foreground: 0 50 0;
+    --card-foreground: 9 9 11;
 
     --popover: 255 255 255;
-    --popover-foreground: 0 50 0;
+    --popover-foreground: 9 9 11;
 
-    --primary: 0 128 0;
-    /* Darker Green for light mode text */
-    --primary-foreground: 240 255 240;
+    --primary: 24 24 27;
+    /* Zinc 900 */
+    --primary-foreground: 250 250 250;
+    /* Zinc 50 */
 
-    --secondary: 200 255 200;
-    --secondary-foreground: 0 50 0;
+    --secondary: 244 244 245;
+    /* Zinc 100 */
+    --secondary-foreground: 24 24 27;
 
-    --muted: 220 255 220;
-    --muted-foreground: 0 100 0;
+    --muted: 244 244 245;
+    --muted-foreground: 113 113 122;
+    /* Zinc 500 */
 
-    --accent: 200 255 200;
-    --accent-foreground: 0 50 0;
+    --accent: 244 244 245;
+    --accent-foreground: 24 24 27;
 
-    --destructive: 200 0 0;
-    --destructive-foreground: 255 255 255;
+    --destructive: 239 68 68;
+    --destructive-foreground: 250 250 250;
 
-    --border: 0 128 0;
-    --input: 0 128 0;
-    --ring: 0 128 0;
+    --border: 228 228 231;
+    /* Zinc 200 */
+    --input: 228 228 231;
+    --ring: 24 24 27;
 
-    --radius: 0px;
-    /* Sharp edges for sci-fi feel */
+    --radius: 0.75rem;
+    /* More rounded as per screenshot */
   }
 
   .dark {
-    /* Matrix Dark Mode (Classic) */
-    --background: 5 10 5;
-    /* Very dark green/black */
-    --foreground: 0 255 65;
-    /* Matrix Green */
+    --background: 9 9 11;
+    --foreground: 250 250 250;
 
-    --card: 10 20 10;
-    --card-foreground: 0 255 65;
+    --card: 9 9 11;
+    --card-foreground: 250 250 250;
 
-    --popover: 10 20 10;
-    --popover-foreground: 0 255 65;
+    --popover: 9 9 11;
+    --popover-foreground: 250 250 250;
 
-    --primary: 0 255 65;
-    --primary-foreground: 0 0 0;
+    --primary: 250 250 250;
+    --primary-foreground: 24 24 27;
 
-    --secondary: 0 50 0;
-    --secondary-foreground: 0 255 65;
+    --secondary: 39 39 42;
+    --secondary-foreground: 250 250 250;
 
-    --muted: 0 40 0;
-    --muted-foreground: 0 160 40;
+    --muted: 39 39 42;
+    --muted-foreground: 161 161 170;
 
-    --accent: 0 60 0;
-    --accent-foreground: 0 255 65;
+    --accent: 39 39 42;
+    --accent-foreground: 250 250 250;
 
-    --destructive: 180 0 0;
-    --destructive-foreground: 0 0 0;
+    --destructive: 127 29 29;
+    --destructive-foreground: 250 250 250;
 
-    --border: 0 80 20;
-    --input: 0 80 20;
-    --ring: 0 255 65;
+    --border: 39 39 42;
+    --input: 39 39 42;
+    --ring: 212 212 216;
   }
 }
 
@@ -112,9 +113,6 @@
   }
 
   body {
-    @apply bg-background text-foreground font-mono antialiased;
-    background-image: linear-gradient(rgba(0, 255, 65, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 255, 65, 0.03) 1px, transparent 1px);
-    background-size: 30px 30px;
+    @apply bg-background text-foreground font-sans antialiased;
   }
 }

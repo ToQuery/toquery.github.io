@@ -4,51 +4,48 @@ import { showcaseProjects } from "../data/showcase";
 // Skill data type
 type Skill = {
   name: string;
+  code: string; // The large letter to display
 };
 
 const skills: Skill[] = [
-  { name: "Java" },
-  { name: "JavaScript" },
-  { name: "TypeScript" },
-  { name: "Golang" },
-  { name: "Dart" },
-  { name: "Flutter" },
-  { name: "Python" },
-  { name: "Vue.js" },
-  { name: "React" },
-  { name: "Next.js" },
-  { name: "Spring Boot" },
-  { name: "PostgreSQL" },
+  { name: "Java", code: "J" },
+  { name: "JavaScript", code: "JS" },
+  { name: "TypeScript", code: "TS" },
+  { name: "Golang", code: "Go" },
+  { name: "Dart", code: "D" },
+  { name: "Flutter", code: "F" },
+  { name: "Python", code: "P" },
+  { name: "Vue.js", code: "V" },
+  { name: "React", code: "R" },
+  { name: "Next.js", code: "N" },
 ];
 
 export default function Home() {
   return (
-    <main className="min-h-screen pt-32 pb-20 selection:bg-primary selection:text-background">
+    <main className="min-h-screen pt-32 pb-20">
       {/* Hero Section */}
-      <section className="container mx-auto px-6 mb-24 relative">
-        <div className="max-w-3xl border-l-2 border-primary pl-6 py-2">
-          <p className="text-primary text-sm mb-2 font-mono tracking-widest">INITIALIZING USER PROFILE...</p>
-          <h1 className="text-5xl sm:text-7xl font-bold tracking-tighter mb-6 text-foreground uppercase glitch-text">
-            ToQuery<span className="animate-pulse text-primary">_</span>
-          </h1>
-          <p className="text-xl sm:text-2xl text-primary/80 leading-relaxed max-w-2xl font-mono">
-            &gt; Full Stack Developer & Technology Enthusiast.
-            <br />
-            &gt; Explorations in code, design, and architecture.
-          </p>
-        </div>
+      <section className="container mx-auto px-6 mb-32 text-center">
+        <h1 className="text-6xl sm:text-7xl font-extrabold tracking-tight mb-8 text-foreground">
+          toquery
+        </h1>
+        <p className="text-xl sm:text-2xl text-muted-foreground leading-relaxed max-w-2xl mx-auto font-normal">
+          Full Stack Developer & Technology Enthusiast.
+          <br />
+          Explorations in code, design, and architecture.
+        </p>
       </section>
 
       {/* Projects Section */}
-      <section className="container mx-auto px-6 mb-24">
-        <div className="flex items-center gap-4 mb-10">
-          <h2 className="text-2xl font-bold tracking-widest text-primary uppercase">
-            // Featured_Projects
+      <section className="container mx-auto px-6 mb-32 max-w-5xl">
+        <div className="flex justify-center mb-12">
+          <h2 className="text-3xl font-bold tracking-tight text-foreground relative inline-block">
+            Projects
+            {/* The pink underline from the screenshot */}
+            <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full opacity-0"></span>
           </h2>
-          <div className="h-px bg-primary/40 flex-grow"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-8">
           {showcaseProjects.map((project) => (
             <ProjectCard
               key={project.name}
@@ -60,23 +57,27 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Skills Section */}
-      <section className="container mx-auto px-6">
-        <div className="flex items-center gap-4 mb-10">
-          <h2 className="text-2xl font-bold tracking-widest text-primary uppercase">
-            // Tech_Stack
+      {/* Tech Stack Section */}
+      <section className="container mx-auto px-6 max-w-5xl">
+        <div className="flex justify-center mb-12">
+          <h2 className="text-3xl font-bold tracking-tight text-foreground relative inline-block">
+            Tech Stack
+            <span className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-16 h-1 bg-pink-500 rounded-full"></span>
           </h2>
-          <div className="h-px bg-primary/40 flex-grow"></div>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
           {skills.map((skill) => (
             <div
               key={skill.name}
-              className="px-4 py-3 border border-primary/30 bg-background hover:bg-primary hover:text-background transition-all cursor-crosshair text-center font-mono text-sm tracking-wider uppercase group relative overflow-hidden"
+              className="aspect-square bg-card rounded-[24px] border border-border/40 shadow-sm flex flex-col items-center justify-center p-6 hover:shadow-md transition-shadow cursor-default"
             >
-              <span className="relative z-10">{skill.name}</span>
-              {/* Scanline hover effect could go here */}
+              <span className="text-5xl font-light text-foreground mb-4 font-sans select-none">
+                {skill.code}
+              </span>
+              <span className="text-sm font-bold text-foreground tracking-wide">
+                {skill.name}
+              </span>
             </div>
           ))}
         </div>
